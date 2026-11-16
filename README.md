@@ -134,3 +134,19 @@ for each requested feature and run the tests and validator before submission.
 - [Linux Logitech HID++ driver](https://github.com/torvalds/linux/blob/master/drivers/hid/hid-logitech-hidpp.c)
 - [GUdev Client API](https://gudev.github.io/gudev/GUdevClient.html)
 - [Gio.Settings](https://docs.gtk.org/gio/class.Settings.html)
+
+## Optional Portuguese cedilla composition
+
+To make acute/apostrophe followed by C produce `ç` (and uppercase `Ç`), run:
+
+```sh
+python3 scripts/install-cedilla.py
+```
+
+This adds two personal `~/.XCompose` rules, independently of keyboard connection.
+Existing content is preserved and backed up to `~/.XCompose.before-cedilla` on
+first modification. A new file includes the locale's default rules (`%L`).
+Reopening applications or logging out/in may be necessary. Application input
+methods differ; check the applications you use. No system Compose files change.
+To undo, remove the marked block, or restore the backup if you have made no
+subsequent edits. The service uninstaller does not remove these optional rules.

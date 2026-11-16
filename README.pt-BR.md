@@ -55,3 +55,12 @@ Teste ligar/desligar, retirar/reconectar o receptor, iniciar sessão com o tecla
 ligado/desligado e suspender/retomar o computador. Confira também o teclado
 integrado e o repouso automático do MX Keys. Veja os detalhes e caminhos de
 instalação no [README principal](README.md). Licença [MIT](LICENSE).
+
+## Cedilha com apóstrofo seguido de C (opcional)
+
+Execute `python3 scripts/install-cedilla.py` para adicionar ao `~/.XCompose` as
+regras de `ç` e `Ç`. O conteúdo existente é preservado, com backup em
+`~/.XCompose.before-cedilla`. Reabra os aplicativos ou entre novamente na sessão.
+A configuração vale independentemente da conexão do teclado. Para desfazer,
+remova o bloco marcado `MX Keys: Portuguese cedilla composition`. A desinstalação
+do serviço não remove essas regras opcionais.
