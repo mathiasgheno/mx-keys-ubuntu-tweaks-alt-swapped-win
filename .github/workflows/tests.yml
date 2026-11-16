@@ -1,0 +1,15 @@
+name: Tests
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  unit-tests:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test event states and keyboard preferences
+        run: python3 -m unittest discover -s tests -v
+      - name: Check Python and shell syntax
+        run: |
+          python3 -m py_compile src/mx_keys_tweaks.py
+          for script in scripts/*.sh; do sh -n "$script"; done
